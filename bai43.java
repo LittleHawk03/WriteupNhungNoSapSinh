@@ -1,4 +1,4 @@
-package Security;
+package Security.WriteupNhungNoSapSinh;
 
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
