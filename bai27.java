@@ -34,10 +34,10 @@ public class bai27 {
     public static void main(String[] args) {
         Eratosthenes();
         
-        int a = scanner.nextInt();
-        int b = scanner.nextInt();
-        for (int i = a; i <= b; i++) {
-            for (int j = a; j <= b; j++) {
+        // int a = scanner.nextInt();
+        // int b = scanner.nextInt();
+        for (int i = 1; i <= 1000; i++) {
+            for (int j = 1; j <= 1000; j++) {
                 int uc = gcd(i, j);
                 if (isPrime[uc]) {
                     System.out.println("the (a, b) : (" + i +" , " + j + ")  : gcd = " + uc);
