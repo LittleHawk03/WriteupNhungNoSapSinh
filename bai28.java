@@ -59,6 +59,7 @@ public class bai28 {
     }
 
     public static void main(String[] args) {
+        System.out.println("nhap so N : ");
         int N = scanner.nextInt();
         int flag = 0;
         isPrime = new Boolean[N + 1];
