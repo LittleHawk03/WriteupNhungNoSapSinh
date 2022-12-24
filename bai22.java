@@ -56,6 +56,7 @@ public class bai22 {
 
         for (int i = L; i < R; i++) {
             for (int j = i + 1; j <= R; j++) {
+                System.out.println("sum (i , j) = ("+ i +" , " + j +") = " + (F(i) * F(j)));
                 sum = sum + (F(i) * F(j));
             }
         }

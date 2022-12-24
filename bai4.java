@@ -19,7 +19,7 @@ public class bai4 {
         Boolean[] isPrime = new Boolean[b - a + 1];
         // gán tất cả phần tử bằng true
         Arrays.fill(isPrime, true);
-        // bát đầu sàng phân đoạn thế a , b để lọc các 
+        // bát đầu sàng phân đoạn thế a , b để lọc các số nguyen to 
         for (int i = 2; i*i <= b; i++) {
             for (int j = Math.max(i*i, (a + i - 1) / i * i); j <= b; j+=i) {
                 isPrime[j - a] = false;
