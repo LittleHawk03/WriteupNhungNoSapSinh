@@ -91,7 +91,7 @@ public class bai23Miller {
                 sum += i;
             }
         }
-
+        System.out.println("sum : " + sum);
         // kiểm tra số nguyên tố sủ dụng thuật toán miller 
         if (isPrime(sum, 5)) {
             System.out.println("YES");

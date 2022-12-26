@@ -14,7 +14,7 @@ public class bai6 {
         for (long i = 2; i*i < n; i++) {
             if (n % i == 0) {
                 if (n / i == i) {
-                    sum += 1;
+                    sum += i;
                 }else{
                     sum += (i + (n / i));
                 }
@@ -25,6 +25,7 @@ public class bai6 {
 
     public static void main(String[] args) {
         long n;
+        System.out.println("nhap N : ");
         n = scanner.nextLong();
         for (long i = 1; i <= n; i++) {
             long a = tongCacSoUocSo(i);

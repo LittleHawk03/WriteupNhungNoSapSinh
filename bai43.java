@@ -98,6 +98,7 @@ public class bai43 {
 
     public static void main(String[] args) {
         int N,p;
+        System.out.println("nhap so N : ");
         N = scanner.nextInt();
         p = random_search();
         System.out.println("sinh so nguyen to P : " + p);

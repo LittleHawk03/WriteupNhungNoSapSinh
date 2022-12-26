@@ -6,24 +6,24 @@ public class bai41 {
     
 
     static Scanner scanner = new Scanner(System.in);
-
-    public static long square_loop(int a,int k,int n) {
+   
+    public static long square_loop(long a,long k,long n) {
         long b = 1;
         a = a % n;
         while (k > 0) {
             if (k % 2 == 1) {
                 b = (b * a) % n;
             }
-            k = k / 2;
+            k = k >> 1;
             a = (a*a) % n; 
         }
         return b;
     }
 
-    public static Boolean millerRabin(int r,int n) {
-        int min = 2,max = n - 2;
-        int a = (int) Math.round(Math.random() * (max - min + 1) + min);
-        int x = (int) square_loop(a, r, n);
+    public static Boolean millerRabin(long r,long n) {
+        long min = 2,max = n - 2;
+        long a = (long) Math.round(Math.random() * (max - min + 1) + min);
+        long x = (long) square_loop(a, r, n);
         if (x == 1 || x == n - 1) {
             return true;
         }
@@ -40,7 +40,7 @@ public class bai41 {
         return false;
     }
 
-    public static Boolean isPrime(int n ,int k) {
+    public static Boolean isPrime(long n ,long k) {
         if (n <= 1 || n == 4) {
             return false;
         }
@@ -48,7 +48,7 @@ public class bai41 {
             return true;
         }
 
-        int r = n - 1;
+        long r = n - 1;
         while (r % 2 == 0) {
             r = r / 2;
         }
@@ -64,12 +64,12 @@ public class bai41 {
 
     public static void main(String[] args) {
         System.out.println("nhap a : ");
-        int a = scanner.nextInt();
+        long a = scanner.nextInt();
         System.out.println("nhap k : ");
-        int k = scanner.nextInt();
+        long k = scanner.nextInt();
         System.out.println("nhap n : ");
-        int n = scanner.nextInt();
-        int x = (int) square_loop(a, k, n);
+        long n = scanner.nextInt();
+        long x = (long) square_loop(a, k, n);
         System.out.println(a + " ^ " + k +" mod " + n + " = " + x);
         if (isPrime(x, 5)) {
             System.out.println("SO NGUYEN TO ");

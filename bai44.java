@@ -6,21 +6,7 @@ public class bai44 {
     
     static Scanner scanner = new Scanner(System.in);
 
-    public static int gcd(int x,int y) {
-        int a,b;
-        if (x > y) {
-            a = x ; b = y;
-        }else{
-            a = y; b = x;
-        }
-        while (b > 0) {
-            int r = a % b;
-            a = b;
-            b = r;
-        }
-        return a;
-    }
-
+    
     public static void ScannerArray(int n, int[] arr,int p) {
         System.out.println("nhap cac phan tu sao cho p va phan tu do co uoc chung la 1");
         for (int i = 0; i < n; i++) {
@@ -72,7 +58,6 @@ public class bai44 {
         int[] arr = new int[n + 1];
         ScannerArray(n, arr, p);
         printArray(arr, n);
-        System.out.println(gcd(5, 10));
         int[] arr2 = new int[n + 1];
         for (int i = 0; i < n; i++) {
             arr2[i] = extend_Euclide(arr[i], p);

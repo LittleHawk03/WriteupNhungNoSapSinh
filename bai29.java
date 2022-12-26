@@ -20,13 +20,25 @@ public class bai29 {
         return b;
     }
 
-    public static int gcd(int a, int b) {
-        int r;
+    private static int extend_Euclide(int e, int epN) {
+        int x2 = 1, x1 = 0, y2 = 0, y1 = 1;
+        int a = e,b = epN;
         while (b > 0) {
-            r = a % b;
+            // 𝑞 ← 𝑎/𝑏 , 𝑟 ← 𝑎 − 𝑞𝑏, 𝑥 ← 𝑥2 − 𝑞𝑥1 , 𝑦 ← 𝑦2 − 𝑞𝑦1
+            int q = a / b;
+            int r = a % b;
+            int x = x2 - q * x1;
+            int y = y2 - q * y1;
+            // 𝑎 ← 𝑏, 𝑏 ← 𝑟, 𝑥2 ← 𝑥1 , 𝑥1 ← 𝑥, 𝑦2 ← 𝑦1 , 𝑦1 ← 𝑦
             a = b;
             b = r;
+            x2 = x1;
+            x1 = x;
+            y2 = y1;
+            y1 = y;
         }
+
+        // truong hop x2 nho hon 0 cong voi b den khi duong thi thoi
         return a;
     }
 
@@ -48,7 +60,7 @@ public class bai29 {
             return false;
         }
         for (int i = 2; i < n; i++) {
-            if (gcd(i, n) == 1) {
+            if (extend_Euclide(i, n) == 1) {
                 if (power(i, n - 1, n) != 1) {
                     return false;
                 }

@@ -13,7 +13,7 @@ public class bai35 {
             if (k % 2 == 1) {
                 b = (b * a) % n;
             }
-            k = k / 2;
+            k = k >> 1;
             a = (a*a) % n;
         }
         return b;

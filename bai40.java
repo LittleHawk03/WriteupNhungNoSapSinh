@@ -6,20 +6,25 @@ public class bai40 {
     
     static Scanner scanner = new Scanner(System.in);
 
-    public static int gcd(int x,int y) {
-        int a,b;
-        if (x > y) {
-            a = x;
-            b = y;
-        }else{
-            a = y;
-            b = x;
-        }
+    private static int extend_Euclide(int e, int epN) {
+        int x2 = 1, x1 = 0, y2 = 0, y1 = 1;
+        int a = e,b = epN;
         while (b > 0) {
+            // 𝑞 ← 𝑎/𝑏 , 𝑟 ← 𝑎 − 𝑞𝑏, 𝑥 ← 𝑥2 − 𝑞𝑥1 , 𝑦 ← 𝑦2 − 𝑞𝑦1
+            int q = a / b;
             int r = a % b;
+            int x = x2 - q * x1;
+            int y = y2 - q * y1;
+            // 𝑎 ← 𝑏, 𝑏 ← 𝑟, 𝑥2 ← 𝑥1 , 𝑥1 ← 𝑥, 𝑦2 ← 𝑦1 , 𝑦1 ← 𝑦
             a = b;
             b = r;
+            x2 = x1;
+            x1 = x;
+            y2 = y1;
+            y1 = y;
         }
+
+        // truong hop x2 nho hon 0 cong voi b den khi duong thi thoi
         return a;
     }
     
@@ -97,7 +102,7 @@ public class bai40 {
 
         for (int i = 0; i < n - 1; i++) {
             for (int j = i + 1; j < n; j++) {
-                int uc = gcd(arr[i], arr[j]);
+                int uc = extend_Euclide(arr[i], arr[j]);
                 if (isPrime(uc, k)) {
                     System.out.println("(i,j) : ("+ arr[i] +" , " + arr[j] + ") = " + uc);
                     count++;

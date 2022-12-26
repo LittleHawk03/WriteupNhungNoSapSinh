@@ -76,6 +76,7 @@ public class bai17ButItsMiller {
             long ra = A * i * i + B * i + C;
             if (isPrime(ra, k)) {
                 System.out.println(i + " la gia tri de thoa man bieu thuc 𝐴𝑥^2 + 𝐵𝑥 + 𝐶 là một số nguyên tố  = " + ra);
+                break;
             }
             if (!isPrime(ra, k) && i == N - 1) {
                 System.out.println("ko co gia tri thoa man");
